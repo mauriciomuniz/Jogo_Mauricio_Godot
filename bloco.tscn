@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://base_soil-dirt-grass.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 120, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 195.614, 32 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 96, 32 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 55, 0.03 )
+
+[node name="bloco" type="Node2D"]
+
+[node name="terra" type="Sprite" parent="."]
+position = Vector2( -128, -96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 5.98715, 21, 242.013, 62.3986 )
+region_filter_clip = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="terra"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="terra/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grama" type="Sprite" parent="."]
+position = Vector2( 148.25, -129.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 264.934, 8.014, 239, 57.6399 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grama"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grama/StaticBody2D"]
+position = Vector2( -0.25, 1.5 )
+shape = SubResource( 3 )
+
+[node name="pedraEgrama" type="Sprite" parent="."]
+position = Vector2( 304, 26.75 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -7.38562, 394.964, 390.226, 64.1896 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pedraEgrama"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pedraEgrama/StaticBody2D"]
+position = Vector2( 0.613525, 5.25 )
+shape = SubResource( 2 )
+
+[node name="pedra" type="Sprite" parent="."]
+position = Vector2( -541, 191.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 960, 447, 193, 65 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pedra"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pedra/StaticBody2D"]
+position = Vector2( 0.000335693, 0 )
+shape = SubResource( 4 )
+
+[node name="parteFina" type="Sprite" parent="."]
+position = Vector2( -224, 32 )
+scale = Vector2( -2.61322, -1.02828 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 45, 47.945, 53, 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parteFina"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parteFina/StaticBody2D"]
+position = Vector2( 0, -2.22942 )
+rotation = 3.14159
+scale = Vector2( 0.489821, -222.942 )
+shape = SubResource( 5 )
